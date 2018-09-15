@@ -1,0 +1,7 @@
+{
+  "name": "i4-routertest-bis",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
