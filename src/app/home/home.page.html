@@ -3,14 +3,63 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
+    <!-- <ion-title>
       Home
-    </ion-title>
+    </ion-title> -->
+    <ion-title>{{ 'HELLO' | translate:param }}</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <button ion-button (click)="switchLanguage('es')">{{ 'CAT' | translate }}</button>
+    <button ion-button (click)="switchLanguage('ta')">{{ 'CAT' | translate }}</button>
+
+    {{ lang }}
+    <ion-list>
+      <ion-item>
+        <ion-label>Language</ion-label>
+        <ion-select [(ngModel)]="lang" (ionChange)="switchLanguage(lang)">
+          <ion-select-option value="en">English</ion-select-option>
+          <ion-select-option value="ta">Tamizh (தமிழ்)</ion-select-option>
+          <ion-select-option value="es">Español</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  
+    <ion-list>
+      <ion-item>
+        <h2>{{ 'APPLE' | translate:param }}</h2>
+      </ion-item>
+      <ion-item>
+        <h2>{{ 'BALL' | translate }}</h2>
+      </ion-item>
+      <ion-item>
+        <h2>{{ 'CAT' | translate }}</h2>
+      </ion-item>
+    </ion-list>
+
+
+
   The world is your oyster.
+  <ion-item *ngFor="let product of products" [routerLink]="['/details', product.id]" routerLinkActive="active">
+    id:{{ product. id }}
+    cont:{{ product.content }}
+  </ion-item>
   <p>If you get lost, the
     <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
 </ion-content>
+<ion-tabs>
+    <ion-tab label="Schedule" icon="calendar" [routerLink]="['/details', '1234']" routerLinkActive="active">
+      <ion-router-outlet stack name="schedule"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab label="Speakers" icon="contacts" href="/app/tabs/(speakers:speakers)">
+      <ion-router-outlet stack name="speakers"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab label="Map" icon="map" href="/app/tabs/(map:map)">
+      <ion-router-outlet stack name="map"></ion-router-outlet>
+    </ion-tab>
+    <ion-tab label="About" icon="information-circle" href="/app/tabs/(about:about)">
+      <ion-router-outlet stack name="about"></ion-router-outlet>
+    </ion-tab>
+  </ion-tabs>

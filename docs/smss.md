@@ -1,0 +1,9 @@
+sms
+  https://github.com/an-rahulpandey/cordova-plugin-sms-receiver
+  https://github.com/rehy/cordova-plugin-sms-receiver
+  https://github.com/cordova-sms/cordova-sms-plugin
+  https://github.com/floatinghotpot/cordova-plugin-sms
+  https://cordova.apache.org/plugins/?q=sms
+  https://ionicframework.com/docs/native/sms/
+  https://github.com/abritopach/ionic-receiver-sms
+  https://github.com/andreszs/cordova-plugin-sms-receive#readme 
